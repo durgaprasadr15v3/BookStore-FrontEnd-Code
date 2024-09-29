@@ -1,0 +1,23 @@
+.header-spacer {
+    flex: 1 1 auto;
+}
+.header-toolbar{
+    background-color: #465b6c;
+    color: #ffffff;
+    .app-title{
+        padding-left: 20px;
+    }
+
+}
+  
+.active{
+    background-color: blue;
+    color: white;
+}
+.inactive{
+    background-color: red;
+    color:white;
+}
+.c1{
+    border: red;
+}

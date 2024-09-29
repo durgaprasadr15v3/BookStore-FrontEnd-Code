@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Add New Book</h2>
+    <form (ngSubmit)="addBook()"  #bookformcomponent="ngForm">
+      <div>
+        <label for="bookName">Book Name:</label>
+        <input type="text" id="bookName" [(ngModel)]="book.bookName" name="bookName" required />
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <input type="text" id="description" [(ngModel)]="book.description" name="description" required />
+      </div>
+      <div>
+        <label for="publisher">Publisher:</label>
+        <input type="text" id="publisher" [(ngModel)]="book.publisher" name="publisher" required />
+      </div>
+      <div>
+        <label for="author">Author:</label>
+        <input type="text" id="author" [(ngModel)]="book.author" name="author" required />
+      </div>
+      <div>
+        <label for="price">Price:</label>
+        <input type="text" id="price" [(ngModel)]="book.price" name="price" required />
+      </div>
+      <div>
+        <label for="bookImage">Book Image:</label>
+        <input type="file" (change)="onFileSelected($event)" required />
+      </div>
+      <button type="submit"  [disabled]="bookformcomponent.invalid">Add Store</button>
+    </form>
+</div>

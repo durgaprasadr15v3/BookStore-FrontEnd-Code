@@ -1,0 +1,64 @@
+<div class="registration-container">
+  <form (ngSubmit)="register() " #registrationForm="ngForm">
+    <h2>Register</h2>
+
+    <div class="input-group">
+      <label for="username">Username</label>
+      <input 
+        type="text" 
+        id="username" 
+        name="username" 
+        [(ngModel)]="user.username" 
+        required 
+        #username="ngModel">
+      <div *ngIf="username.invalid && username.touched" class="error-message">
+        Username is required
+      </div>
+    </div>
+    <div class="input-group">
+      <label for="email">Mobile</label>
+      <input 
+        type="mobile" 
+        id="mobile" 
+        name="mobile" 
+        [(ngModel)]="user.mobile" 
+        required 
+        #mobile="ngModel">
+      <div *ngIf="mobile.invalid && mobile.touched" class="error-message">
+        Valid mobile is required
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        [(ngModel)]="user.email" 
+        required 
+        #email="ngModel">
+      <div *ngIf="email.invalid && email.touched" class="error-message">
+        Valid email is required
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input 
+        type="password" 
+        id="password" 
+        name="password" 
+        [(ngModel)]="user.password" 
+        required 
+        #password="ngModel">
+      <div *ngIf="password.invalid && password.touched" class="error-message">
+        Password is required
+      </div>
+    </div>
+
+    <button type="submit"  [disabled]="registrationForm.invalid">Register</button>
+
+    
+  </form>
+</div>

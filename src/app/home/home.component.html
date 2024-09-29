@@ -1,0 +1,36 @@
+<div class="bookstore-container">
+    <header>
+      <h1>Welcome to the Bookstore</h1>
+      <input 
+        type="text" 
+        placeholder="Search for books or authors..." 
+        [(ngModel)]="searchTerm" 
+        (input)="onSearch()" />
+    </header>
+  
+    <div *ngIf="books.length > 0; else noBooks">
+      <ul>
+        <li *ngFor="let book of books">
+          <img [src]="'data:image/jpeg;base64,' + book.imageBase64" alt="{{ book.title }}" width="150" height="200" />
+
+          <p><strong>BookName:</strong> {{ book.bookName }}</p>
+          <p><strong>Author:</strong> {{ book.author }}</p>
+          <p><strong>Description:</strong> {{ book.description }}</p>
+          <p><strong>Price:</strong> ${{ book.price }}</p>
+          <p><strong>publisher:</strong>${{ book.publisher }}</p>
+          <button (click)="addToCart(book)">Add to Cart</button>
+
+        </li>
+      </ul>
+    </div>
+    
+    <ng-template #noBooks>
+      <p>No books available.</p>
+    </ng-template>
+    
+  
+    <footer>
+      <p>&copy; 2024 Bookstore | All Rights Reserved</p>
+    </footer>
+  </div>
+  
